@@ -14,12 +14,16 @@ if (!$conexao){
 
      echo "Falha ao conectar: (".$mysqli->connect_errno.")".$mysqli->connect_errno;
 
+
+    
+
 }
 
 else {
     
     echo "Conectado";
 }
+
 
 //------------- conexão banco ----------------//
 

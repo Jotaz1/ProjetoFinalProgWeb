@@ -1,5 +1,9 @@
 <?php
 
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+    }
+
 include ("conexão.php");
 
 print_r($_POST);
@@ -15,6 +19,7 @@ if (mysqli_query($conexao, $sql)){
 
     echo "Envio cadastrado";
 
+    phpAlert(   "Cartão cadastrado com sucesso!!!"   );
 
 }
 else {

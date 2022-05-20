@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Cartão Azul</title>
     </head>
     
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -74,7 +74,7 @@
 
         .menuLateral{
 
-            width: 300px;
+            width: 0px;
             height: 93.8%;;
             background-color: rgba(0, 0, 0, 0.411);
             position: absolute;
@@ -86,19 +86,22 @@
             z-index: 3;
             transition: all 0.3s ease;
             
+            
+            
+            
         }
 
         .menu_cartao1, .menu_cartao2, .menu_cartao3
         {
 
-            width: 150px;
-            height: 200px; 
+            width: 0px;
+            height: 0px; 
             transition: all 0.1s ease;
-            
-             
             
 
         }
+
+      
 
         .menu_cartao1:hover{
 
@@ -122,7 +125,8 @@
 
 
         }
-  
+
+        
 
 
        .seta_esquerda{
@@ -144,11 +148,13 @@
             margin-left: 10px;
             z-index: 3;
             transition: all 0.4s ease-out;
+            opacity: 0;
+           
+            
             
        }
 
        .seta_direita{
-
 
             padding: 40px;
             width: 20px;
@@ -166,8 +172,9 @@
             justify-content: center;
             margin-left: 10px;
             z-index: 3;
-            opacity: 0;
+            opacity: 1;
             transition: all 0.4 ease-out;
+            
 
        }
       
@@ -183,6 +190,7 @@
 
             color: #FFFF;
             font-size: 20px;
+            opacity: 0;
             
 
        }
@@ -200,7 +208,7 @@
 
        .menu_titulo{
 
-            opacity: 0;
+            opacity: 1;
             transition: all 0.1s;
             
 
@@ -286,8 +294,6 @@
             background: #00800093;
             cursor: pointer;
 
-
-
        }
 
        #story{
@@ -315,7 +321,6 @@
 
        }*/
        
-
 
        #story2{
 
@@ -347,8 +352,6 @@
             background: rgba(255, 255, 255, 0.849);
             color: black;
             resize: none;
-            
-      
 
        }
 
@@ -372,130 +375,164 @@
 
     <body>
 
+        <form action="banco_dados.php" method="post">
+
+
         <section class="container">
 
             <img class="imagem_bg" src="img_fundo.jpg" alt="">
 
             <header>
 
-                <a href="página inicial/pag1.html"><p>Página inicial</p> </a>
+                <a href="página inicial/inicio.php"><p>Página inicial</p> </a>
                 
             </header>
 
 
-            <div class="menuLateral">
-                <label class="modelos_menu">Escolha um modelo</label> 
-                <a href="página2.html"><img class="menu_cartao1"  src="cartão_2.png" alt=""></a>
-                <a href="página3.html"><img class="menu_cartao2"  src="cartão_3.png" alt=""></a>
-                <a href="página.html"><img class="menu_cartao3"  src="cartão_1.png" alt=""></a>
-            </div>
-
             <div class="arrow">
 
-                <div class="menu_cartao">
-
-                    <label class="menu_titulo">Modelos</label> 
-
-                </div>
                 
             </div>
 
-            <button class="seta_esquerda" onclick="fecharMenu()" type="submit">
+            <!-- <button class="seta_esquerda" onclick="fecharMenu()">
 
-                <i class="fas fa-angle-left"></i>
+                <i class="fas fa-angle-left"></i> 
 
-            </button>
+            </button> -->
 
             <div class="cartao_central">
 
                 <img class="cartao_meio" src="cartão_4.png" alt="">
 
-                <textarea  maxlength="26" style="resize: none;"  name="titulo" id="caixa_texto1" cols="35" rows="10" placeholder="Escreva um título..."></textarea>
+                <input type="hidden" id="custId" name="imagem" value="cartão_1.png">
+            
+                    <textarea  maxlength="26" style="resize: none;"  name="titulo" id="caixa_texto1" cols="35" rows="10" wrap="soft" placeholder="Escreva um título..."></textarea>
 
-                <textarea maxlength="1000" style="resize: none;"  name="titulo" id="caixa_texto2" cols="35" rows="10" placeholder="Escreva sua mensagem..." ></textarea>
-
-                <textarea rows="10" cols="30" style="resize: none;"  name="rodape" id="caixa_texto3" maxlength="26" placeholder="Despedida..." ></textarea>
-
-                <form method="get" id="testeformid">
-
-                    <input class="botao_submit" type="submit" value="Enviar">
-
-                </form>
-
+                    <textarea maxlength="1000" style="resize: none;"  name="mensagem" id="caixa_texto2" cols="35" rows="10" wrap="soft" placeholder="Escreva sua mensagem..." ></textarea>
+    
+                    <textarea rows="10" cols="30" style="resize: none;"  name="rodape" id="caixa_texto3" maxlength="26" placeholder="Despedida..." ></textarea>
+    
+    
+                        <input class="botao_submit" type="submit" value="Enviar">
+   
             </div>
-
-            <button onclick="abrirMenu()" class="seta_direita" >
-
-                <i class="fas fa-chevron-right"></i>
-
-            </button>
 
         </section>
 
+        </form>
+
+        <div class="menuLateral">
+                
+            <label class="modelos_menu">Cartões</label>
+
+                <a href="página2.php"><img class="menu_cartao1"  src="cartão_2.png" alt=""></a>
+                <a href="página.php"><img class="menu_cartao2"  src="cartão_1.png" alt=""></a>
+                <a href="página3.php"><img class="menu_cartao3"  src="cartão_3.png" alt=""></a>
+
+        </div>
+
+        <button class="seta_esquerda" onclick="fecharMenu()">
+
+            <i class="fas fa-angle-left"></i>
+
+        </button>
+
+        <div class="menu_cartao">
+
+            <label class="menu_titulo">Modelos</label> 
+
+        </div>
+        
+        <button onclick="abrirMenu()" class="seta_direita" >
+
+            <i class="fas fa-chevron-right"></i>
+
+        </button>
+
         <script>
 
-            function fecharMenu(){
-
-                let close = window.document.querySelector('.menuLateral');
-                close.style.width = '0';
-
-                let imagemCartao1 = window.document.querySelector('.menu_cartao1');
-                imagemCartao1.style.opacity = '0';
-
-                let imagemCartao2 = window.document.querySelector('.menu_cartao2');
-                imagemCartao2.style.opacity = '0';
-
-                let imagemCartao3 = window.document.querySelector('.menu_cartao3');
-                imagemCartao3.style.opacity = '0';
-
-                let titulo = window.document.querySelector('.modelos_menu');
-                titulo.style.opacity = '0';
-
-                let botao = window.document.querySelector('.seta_esquerda');
-                botao.style.opacity = '0';
-
-                let botao2 = window.document.querySelector('.seta_direita');
-                botao2.style.opacity = '1';
-
-                let modelos = window.document.querySelector('.menu_titulo');
-                modelos.style.opacity = '1';
-
-
-            }
-
-
+            
             function abrirMenu(){
-                
-                
+
                 let open = window.document.querySelector('.menuLateral');
                 open.style.width = '300px';
                 
-                let imagemCartao1 = window.document.querySelector('.menu_cartao1');
-                imagemCartao1.style.opacity = '1';
+                let setaEsquerda = window.document.querySelector('.seta_esquerda');
+                setaEsquerda.style.opacity = '1';
 
-                let imagemCartao2 = window.document.querySelector('.menu_cartao2');
-                imagemCartao2.style.opacity = '1';
+                let setaDireita = window.document.querySelector('.seta_direita');
+                setaDireita.style.opacity = '0';
 
-                let imagemCartao3 = window.document.querySelector('.menu_cartao3');
-                imagemCartao3.style.opacity = '1';
+                let tituloLateral = window.document.querySelector('.modelos_menu');
+                tituloLateral.style.opacity = '1'; 
 
-                let titulo = window.document.querySelector('.modelos_menu');
-                titulo.style.opacity = '1';
+                let tituloBola = window.document.querySelector('.menu_titulo');
+                tituloBola.style.opacity = '0';
 
-                let botao = window.document.querySelector('.seta_esquerda');
-                botao.style.opacity = '1';
+                let cart = window.document.querySelector('.menu_cartao1');
+                cart.style.width = '150px';
 
-                let botao2 = window.document.querySelector('.seta_direita');
-                botao2.style.opacity = '0';
+                let cart1 = window.document.querySelector('.menu_cartao1');
+                cart1.style.height = '200px';
 
-                let modelos = window.document.querySelector('.menu_titulo');
-                modelos.style.opacity = '0';
+                let cart2 = window.document.querySelector('.menu_cartao2');
+                cart2.style.width = '150px';
 
+                let carta2= window.document.querySelector('.menu_cartao2');
+                carta2.style.height = '200px';
 
+                let cart3 = window.document.querySelector('.menu_cartao3');
+                cart3.style.width = '150px';
 
+                let cartao3 = window.document.querySelector('.menu_cartao3');
+                cartao3.style.height = '200px';
+
+        
+
+            }
+
+            function fecharMenu(){
+
+                let open = window.document.querySelector('.menuLateral');
+                open.style.width = '0px';
+                
+                let setaEsquerda = window.document.querySelector('.seta_esquerda');
+                setaEsquerda.style.opacity = '0';
+
+                let setaDireita = window.document.querySelector('.seta_direita');
+                setaDireita.style.opacity = '1';
+
+                let tituloLateral = window.document.querySelector('.modelos_menu');
+                tituloLateral.style.opacity = '0';
+
+                let tituloBola = window.document.querySelector('.menu_titulo');
+                tituloBola.style.opacity = '1';
+
+                let cart = window.document.querySelector('.menu_cartao1');
+                cart.style.width = '0px';
+
+                let cart1 = window.document.querySelector('.menu_cartao1');
+                cart1.style.height = '0px';
+
+                let cart2 = window.document.querySelector('.menu_cartao2');
+                cart2.style.width = '0px';
+
+                let carta2= window.document.querySelector('.menu_cartao2');
+                carta2.style.height = '0px';
+
+                let cart3 = window.document.querySelector('.menu_cartao3');
+                cart3.style.width = '0px';
+
+                let cartao3 = window.document.querySelector('.menu_cartao3');
+                cartao3.style.height = '0px';
+    
 
 
             }
+
+
+
+            
         </script>
 
     </body>
